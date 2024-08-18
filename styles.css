@@ -1,0 +1,319 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Header and Navigation */
+/* Header styling */
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the header is on top */
+}
+
+/* Navbar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    flex-wrap: wrap;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Nav links styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nav link items */
+.nav-links li {
+    display: inline;
+}
+
+/* Nav link anchor tags */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .nav-links li {
+        display: block;
+        text-align: left;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.5rem 0;
+        width: 100%;
+    }
+}
+
+
+.nav-links a:hover {
+    text-decoration: underline;
+    text-transform: uppercase;
+   font-weight: bolder;
+   background-color: azure;
+   color: #3498db;
+   
+}
+
+/* Background GIF for Login Page */
+body {
+    background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGRwaGQ0c2ZxZzIzaTI1Mjcwcjg5eDVvNDEwdWtjbmtucnEzcmdxeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OAfCdWmPIxhGSTI5to/giphy.webp') no-repeat center center fixed;
+    background-size: cover; /* Ensure the GIF covers the entire background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#login-form {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency to see the background GIF */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 10% auto; /* Center the login form */
+    margin-top: 20%;
+}
+
+
+#login-form h2 {
+    margin-bottom: 1rem;
+}
+
+#login-form input {
+    padding: 0.5rem;
+    width: 80%;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#login-form button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: #2980b9;
+}
+
+/* Loading Spinner */
+#spinner-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Main Content */
+#main-content {
+    display: none; /* Initially hidden, will be shown after loading */
+    padding: 2rem;
+    margin-top: 4rem; /* Ensure margin-top to avoid overlap with fixed header */
+    margin-bottom: 6rem; /* Ensure space for footer */
+}
+
+/* Hero section styling */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+    padding: 0 1rem; /* Add padding to prevent content from touching the edges on smaller screens */
+}
+
+/* Hero image styling */
+.hero img {
+    width: 65%;
+    height: auto;
+    max-width: 100%; /* Ensure image does not exceed container width */
+    border-radius: 10px; /* Optional: adds a border radius */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure the image is centered */
+}
+
+/* Hero text styling */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 63%; /* Set width to ensure text is responsive */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 1rem;
+    }
+
+    .hero img {
+        width: 90%; /* Make the image larger on smaller screens */
+    }
+
+    .hero-text {
+        width: 90%; /* Make the text container wider on smaller screens */
+        padding: 0.5rem; /* Reduce padding for smaller screens */
+        font-size: 0.9rem; /* Adjust font size for readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero img {
+        width: 100%; /* Make the image take full width on very small screens */
+    }
+
+    .hero-text {
+        width: 95%; /* Further adjust the text container width */
+        padding: 0.5rem; /* Keep padding reduced */
+        font-size: 0.8rem; /* Further adjust font size for readability */
+    }
+}
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.cards {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 394px;
+}
+
+.cards h3 {
+    margin-top: 0;
+}
+
+.cards button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cards button:hover {
+    background-color: #2980b9;
+}
+
+.cards:hover {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.card:hover{
+    cursor: pointer;
+    background-color: #80c3f0;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+footer {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the footer is on top */
+}
+
+/* Ensuring full page scroll */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#main-content {
+    flex: 1; /* Allow main content to take remaining space */
+}
